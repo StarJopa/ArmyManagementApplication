@@ -1,0 +1,126 @@
+﻿<Window x:Class="ArmyManagementApplication.AddUnitWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добавить юнита" Height="460" Width="400">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
+    <Grid Margin="10">
+
+        <StackPanel>
+            <TextBlock Text="Название юнита:"/>
+            <Grid>
+                <TextBox x:Name="txtUnitName" />
+                <TextBlock Text="Введите название" 
+                           Foreground="Gray" 
+                           IsHitTestVisible="False" 
+                           VerticalAlignment="Center" 
+                           Margin="5,0"
+                           Visibility="{Binding Text.IsEmpty, ElementName=txtUnitName, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Grid>
+
+            <TextBlock Text="Тип юнита:"/>
+            <ComboBox x:Name="cmbUnitType">
+                <ComboBoxItem Content="Melee"/>
+                <ComboBoxItem Content="Ranged"/>
+                <ComboBoxItem Content="Magic"/>
+            </ComboBox>
+
+            <TextBlock Text="Атака:"/>
+            <Grid>
+                <TextBox x:Name="txtUnitAttack" />
+                <TextBlock Text="Введите силу атаки" 
+                           Foreground="Gray" 
+                           IsHitTestVisible="False" 
+                           VerticalAlignment="Center" 
+                           Margin="5,0"
+                           Visibility="{Binding Text.IsEmpty, ElementName=txtUnitAttack, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Grid>
+
+            <TextBlock Text="Стоимость:"/>
+            <Grid>
+                <TextBox x:Name="txtUnitCost" />
+                <TextBlock Text="Введите стоимость" 
+                           Foreground="Gray" 
+                           IsHitTestVisible="False" 
+                           VerticalAlignment="Center" 
+                           Margin="5,0"
+                           Visibility="{Binding Text.IsEmpty, ElementName=txtUnitCost, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Grid>
+
+            <TextBlock Text="Доступно:"/>
+            <Grid>
+                <TextBox x:Name="txtUnitAvailable" />
+                <TextBlock Text="Введите количество" 
+                           Foreground="Gray" 
+                           IsHitTestVisible="False" 
+                           VerticalAlignment="Center" 
+                           Margin="5,0"
+                           Visibility="{Binding Text.IsEmpty, ElementName=txtUnitAvailable, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Grid>
+
+            <TextBlock Text="Максимальное количество НР:"/>
+            <Grid>
+                <TextBox x:Name="txtUnitMaxHP" />
+                <TextBlock Text="Введите максимальное количество НР" 
+               Foreground="Gray" 
+               IsHitTestVisible="False" 
+               VerticalAlignment="Center" 
+               Margin="5,0"
+               Visibility="{Binding Text.IsEmpty, ElementName=txtUnitMaxHP, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Grid>
+
+            <TextBlock Text="Защита:"/>
+            <Grid>
+                <TextBox x:Name="txtUnitDefense" />
+                <TextBlock Text="Введите защиту" 
+               Foreground="Gray" 
+               IsHitTestVisible="False" 
+               VerticalAlignment="Center" 
+               Margin="5,0"
+               Visibility="{Binding Text.IsEmpty, ElementName=txtUnitDefense, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Grid>
+
+            <TextBlock Text="Число стрел:"/>
+            <Grid>
+                <TextBox x:Name="txtUnitArrows" />
+                <TextBlock Text="Введите число стрел" 
+               Foreground="Gray" 
+               IsHitTestVisible="False" 
+               VerticalAlignment="Center" 
+               Margin="5,0"
+               Visibility="{Binding Text.IsEmpty, ElementName=txtUnitArrows, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Grid>
+
+            <TextBlock Text="Число маны:"/>
+            <Grid>
+                <TextBox x:Name="txtUnitMana" />
+                <TextBlock Text="Введите число маны" 
+               Foreground="Gray" 
+               IsHitTestVisible="False" 
+               VerticalAlignment="Center" 
+               Margin="5,0"
+               Visibility="{Binding Text.IsEmpty, ElementName=txtUnitMana, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Grid>
+
+            <TextBlock Text="Уровень прокачки:"/>
+            <Grid>
+                <TextBox x:Name="txtUnitLevel" />
+                <TextBlock Text="Введите уровень" 
+               Foreground="Gray" 
+               IsHitTestVisible="False" 
+               VerticalAlignment="Center" 
+               Margin="5,0"
+               Visibility="{Binding Text.IsEmpty, ElementName=txtUnitLevel, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Grid>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                <Button Content="Добавить" Click="AddUnit_Click" Width="80" Margin="0,0,10,0"/>
+                <Button Content="Отмена" Click="Cancel_Click" Width="80"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+
+
+
+</Window>
